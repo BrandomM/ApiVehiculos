@@ -18,5 +18,27 @@ public class VehiculoServiceImpl implements VehiculoService {
     public List<Vehiculo> listar() {
         return vehiculoDao.findAll();
     }
+
+    @Override
+    public void registrar(Vehiculo vehiculo) {
+        vehiculoDao.save(vehiculo);
+    }
+
+    @Override
+    public void eliminar(Vehiculo vehiculo) {
+        vehiculoDao.delete(vehiculo);
+    }
+
+    @Override
+    public Vehiculo buscarPorId(Long id) {
+        return vehiculoDao.findById(id).orElse(null);
+    }
+
+    @Override
+    public void modificar(Vehiculo vehiculo) {
+        vehiculoDao.save(vehiculo);
+    }
+    
+    
     
 }
